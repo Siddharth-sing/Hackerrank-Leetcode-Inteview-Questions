@@ -1,0 +1,69 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+class Solution
+{
+ private:
+     vector<vector<int>> v;
+     int n;
+ public:
+
+     int diff =0;
+
+     void getDifference(vector<vector<int>> v, int n)
+     {
+        this->n = n;
+        this->v = v ;
+        int pdSum = 0;
+        int odSum = 0;
+
+        for(int i=0;i<n;i++)
+        {
+            pdSum = pdSum + v[i][i];
+
+        }
+        int j = 0;
+        for(int i=n-1;i>=0;i--)
+        {
+            odSum = odSum + v[i][j];
+            j++;
+
+        }
+        diff = pdSum-odSum;
+        cout<<abs(diff)<<"\n";
+    }
+
+};
+int main()
+{
+    vector<vector<int>> v;
+
+    int n,ele;
+
+    cin>> n;
+
+        for(int i=0;i<n;i++)
+        {
+            vector<int> row;
+            for(int j=0;j<n;j++)
+            {
+                cin>>ele;
+                row.push_back(ele);
+            }
+          v.push_back(row);
+        }
+
+    /*    vector<int>::iterator itr;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<n;j++)
+              cout<<v[i][j]<<" ";
+
+          cout<<"\n";
+        }*/
+
+    Solution S;
+    S.getDifference(v,n);
+return 0;
+}
