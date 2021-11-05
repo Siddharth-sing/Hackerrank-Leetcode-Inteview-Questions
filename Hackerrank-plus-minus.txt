@@ -1,0 +1,54 @@
+/*---------- Hackerank -> PlusMinus -----------------------  */
+
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution
+{
+private:
+    int n;
+    vector<int> v;
+
+public:
+    void initialize()
+    {
+      cin>>n;
+      for(int i=0;i<n;i++)
+      {
+          int ele;
+          cin>>ele;
+          v.push_back(ele);
+      }
+    }
+    void plusMinus()
+    {
+        vector<int>::iterator itr;
+        int size = v.size();
+        float pos=0,neg=0,zero=0;
+
+        for(itr=v.begin();itr!=v.end();itr++)
+        {
+            if(*itr > 0)
+                pos++;
+            else if(*itr < 0)
+                neg++;
+            else
+                zero++;
+        }
+
+       cout << fixed;
+       cout<<setprecision(6);
+       cout<<pos/size<<"\n";
+       cout<<neg/size<<"\n";
+       cout<<zero/size<<"\n";
+    }
+
+
+};
+
+int main()
+{
+    Solution S;
+    S.initialize();
+    S.plusMinus();
+}
