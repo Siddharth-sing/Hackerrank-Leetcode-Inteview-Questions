@@ -1,0 +1,116 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution
+{
+private:
+    vector<vector<int>> v;
+public:
+
+    void initialize()
+    {
+       for(int i=0;i<3;i++)
+       {
+            vector<int> row;
+            for(int i=0;i<3;i++)
+            {
+                int ele;
+                cin>>ele;
+                row.push_back(ele);
+            }
+        v.push_back(row);
+       }
+
+    }
+
+    void magicMat()
+    {
+       vector<int> mat;
+
+       mat.push_back(magicMat1());
+       mat.push_back(magicMat2());
+       mat.push_back(magicMat3());
+       mat.push_back(magicMat4());
+       mat.push_back(magicMat5());
+       mat.push_back(magicMat6());
+       mat.push_back(magicMat7());
+       mat.push_back(magicMat8());
+
+     cout<<*min_element(mat.begin(),mat.end())<<"\n";
+
+    }
+   int magicMat1()
+   {
+       int diff = abs(4-v[0][0]) + abs(9-v[0][1]) + abs(2-v[0][2])
+                  +abs(3-v[1][0]) + abs(5-v[1][1]) + abs(7-v[1][2])
+                  +abs(8-v[2][0]) + abs(1-v[2][1]) + abs(6-v[2][2]);
+
+     return diff;
+   }
+   int magicMat2()
+   {
+       int diff = abs(2-v[0][0]) + abs(9-v[0][1]) + abs(4-v[0][2])
+                  +abs(7-v[1][0]) + abs(5-v[1][1]) + abs(3-v[1][2])
+                  +abs(6-v[2][0]) + abs(1-v[2][1]) + abs(8-v[2][2]);
+
+     return diff;
+   }
+   int magicMat3()
+   {
+       int diff = abs(6-v[0][0]) + abs(7-v[0][1]) + abs(2-v[0][2])
+                  +abs(1-v[1][0]) + abs(5-v[1][1]) + abs(9-v[1][2])
+                  +abs(8-v[2][0]) + abs(3-v[2][1]) + abs(4-v[2][2]);
+
+     return diff;
+   }
+   int magicMat4()
+   {
+       int diff = abs(8-v[0][0]) + abs(1-v[0][1]) + abs(6-v[0][2])
+                  +abs(3-v[1][0]) + abs(5-v[1][1]) + abs(7-v[1][2])
+                  +abs(4-v[2][0]) + abs(9-v[2][1]) + abs(2-v[2][2]);
+
+     return diff;
+   }
+   int magicMat5()
+   {
+       int diff = abs(4-v[0][0]) + abs(3-v[0][1]) + abs(8-v[0][2])
+                  +abs(9-v[1][0]) + abs(5-v[1][1]) + abs(1-v[1][2])
+                  +abs(2-v[2][0]) + abs(7-v[2][1]) + abs(6-v[2][2]);
+
+     return diff;
+   }
+   int magicMat6()
+   {
+       int diff = abs(8-v[0][0]) + abs(3-v[0][1]) + abs(4-v[0][2])
+                  +abs(1-v[1][0]) + abs(5-v[1][1]) + abs(9-v[1][2])
+                  +abs(6-v[2][0]) + abs(7-v[2][1]) + abs(2-v[2][2]);
+
+     return diff;
+   }
+   int magicMat7()
+   {
+       int diff = abs(6-v[0][0]) + abs(1-v[0][1]) + abs(8-v[0][2])
+                  +abs(7-v[1][0]) + abs(5-v[1][1]) + abs(3-v[1][2])
+                  +abs(2-v[2][0]) + abs(9-v[2][1]) + abs(4-v[2][2]);
+
+     return diff;
+   }
+   int magicMat8()
+   {
+       int diff = abs(2-v[0][0]) + abs(7-v[0][1]) + abs(6-v[0][2])
+                  +abs(9-v[1][0]) + abs(5-v[1][1]) + abs(1-v[1][2])
+                  +abs(4-v[2][0]) + abs(3-v[2][1]) + abs(8-v[2][2]);
+
+     return diff;
+   }
+};
+
+int main()
+{
+
+  Solution S;
+  S.initialize();
+  S.magicMat();
+
+return 0;
+}
