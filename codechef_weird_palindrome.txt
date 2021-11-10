@@ -1,0 +1,53 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution
+{
+private:
+    int n;
+    vector<int> v;
+    int oc=0;
+public:
+
+    void takeInput()
+    {
+       cin>>n;
+       for(int i=0;i<n;i++)
+       {
+           int ele;
+           cin>>ele;
+           if(ele%2!=0)
+            oc++;
+
+           v.push_back(ele);
+       }
+    }
+    void makePal()
+    {
+      int r;
+
+      if(v.size()==1)
+        r=0;
+      else
+        {
+          r=oc/2;
+        }
+      cout<<r<<"\n";
+      oc = 0;
+    }
+
+};
+
+
+int main()
+{
+    Solution S;
+    int T;
+    cin>>T;
+    for(int i=0;i<T;i++)
+    {
+        S.takeInput();
+        S.makePal();
+    }
+
+}
