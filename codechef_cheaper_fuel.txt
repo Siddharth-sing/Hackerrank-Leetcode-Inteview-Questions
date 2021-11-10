@@ -1,0 +1,40 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+class Solution
+{
+private:
+    int x,y,a,b,k;
+public:
+
+    void takeInput()
+    {
+       cin>>x>>y>>a>>b>>k;
+    }
+    void cheaperFuel()
+    {
+        int petrol = x + k*a;
+        int diesel = y + k*b;
+
+        if(petrol < diesel)
+            cout<<"PETROL"<<"\n";
+        else if(petrol > diesel)
+            cout<<"DIESEL"<<"\n";
+        else
+            cout<<"SAME PRICE"<<"\n";
+    }
+};
+
+
+int main()
+{
+    Solution S;
+    int T;
+    cin>>T;
+    for(int i=0;i<T;i++)
+    {
+        S.takeInput();
+        S.cheaperFuel();
+    }
+
+}
