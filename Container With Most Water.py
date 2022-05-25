@@ -1,4 +1,3 @@
-```
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         j = len(height)-1
@@ -13,4 +12,3 @@ class Solution:
                 i+=1
 
         return maxArea
-```
